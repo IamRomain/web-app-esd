@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, shrink-to-fit=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui user-scalable=0" />
+
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!--Bootstrap & Font Awesome CSS-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+	<script src="typed.min.js"></script>
+
+	<!--JQuery & JQuery Mobile JS-->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<!--Hide the Loading text-->
+	<script>
+		$.mobile.loading().hide();
+		$("body").css({
+			"overflow": "hidden",
+			'position': 'fixed'
+		});
+	</script>
+</head>
+
+<body>
+	<h1>Game Over</h1>
+	<h3 id="username"></h3>
+	<h4 id="score"></h4>
+
+
+	<button id="submit" type="submit" class="btn btn-success btn-block">Rejouer</button>
+
+
+	<script>
+		$(document).ready(function() {
+
+			const urlParams = new URLSearchParams(window.location.search);
+			$('#username').text(urlParams.get('username'));
+			$('#score').text(urlParams.get('score'));
+
+			var username = urlParams.get('username');
+
+			$("#submit").click(function() {
+				var url = 'index.html?username=' + username;
+				//	window.location.replace(url);
+				$(location).attr('href', url)
+			});
+
+
+		});
+	</script>
+</body>
+</html>

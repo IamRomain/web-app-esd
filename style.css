@@ -1,0 +1,277 @@
+html,
+body,
+* {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	outline: none !important;
+	border: none;
+}
+
+
+
+.container-global {
+	width: 100vw;
+	height: calc(var(--vh, 1vh) * 100);
+	background-color: #243F4A;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white;
+}
+
+#oval {
+	width: 150vw;
+	height: calc(var(--vh, 1vh) * 25);
+	margin: -13vh -25vw;
+	background: white;
+	border-radius: 150vw / calc(var(--vh, 1vh) * 25);
+	overflow: hidden;
+}
+
+.container-status {
+	position: fixed;
+	overflow: hidden;
+	width: 100vw;
+	height: calc(var(--vh, 1vh) * 10);
+	top: 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+#bg-icon {
+	position: relative;
+	z-index: 1;
+	background-color: #ADD8E6;
+	border-radius: 100%;
+	height: calc(var(--vh, 1vh) * 10);
+	width: calc(var(--vh, 1vh) * 10);
+}
+
+#hide__icon__school,
+#hide__icon__moral,
+#hide__icon__relational,
+#hide__icon__money {
+	position: absolute;
+	z-index: 2;
+	background-color: #243F4A;
+	height: calc(var(--vh, 1vh) * 10);
+	width: calc(var(--vh, 1vh) * 10);
+	top: calc(var(--vh, 1vh) * 2);
+	transition: all .9s ease;
+	-moz-transition: all .9s ease;
+	/* Firefox 4 */
+	-webkit-transition: all .9s ease;
+	/* Safari and Chrome */
+
+
+
+
+}
+
+/*On peut avoir 12 points ! 
+On part de 2 en haut/bas et tous les .5 on gagne/perd 1 point
+*/
+
+.img {
+	position: absolute;
+	z-index: 3;
+	height: calc(var(--vh, 1vh) * 10);
+	width: calc(var(--vh, 1vh) * 10);
+}
+
+.container-content {
+	position: relative;
+	overflow: hidden;
+	z-index: 4;
+	width: 100vw;
+	height: calc(var(--vh, 1vh) * 75);
+	position: absolute;
+	margin: 13vh 0 15vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container-text {
+	height: calc(var(--vh, 1vh) * 20);
+	width: 90vw;
+	margin: 2vh 5vw 5vh;
+	text-align: center;
+}
+
+p {
+	font-size: 16px;
+}
+
+.container-cards {
+	position: absolute;
+	height: 42vh;
+	width: 42vh;
+	width: 100vh;
+	top: calc(var(--vh, 1vh) * 25);
+}
+
+.cards {
+	z-index: 2;
+	position: absolute;
+	height: 42vh;
+	width: 42vh;
+	margin: auto 29vh;
+}
+
+.card-back {
+	z-index: 1;
+	position: absolute;
+	background-color: #243F4A;
+	height: 42vh;
+	width: 42vh;
+	margin: auto 29vh;
+
+}
+
+.card__img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 100%;
+	border-collapse: separate;
+	perspective: 1px;
+}
+
+.card__choice {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	opacity: 0;
+	border-collapse: separate;
+	color: black;
+}
+
+.card__choice.m--left {
+	content: 'test';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	background: #B1DA96;
+}
+
+.card__choice.m--right {
+	content: 'test2';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	background: #FF945A;
+}
+
+#answerLeft,
+#answerRight {
+	position: absolute;
+	font-size: 1.5em !important;
+	width: 50%;
+	text-align: center;
+	margin: 10% 25%;
+}
+
+.cards.reset {
+	transition: transform 0.3s;
+	transform: translateX(0) !important;
+}
+
+.cards.reset .card__choice {
+	transition: opacity 0.3s;
+	opacity: 0 !important;
+}
+
+.cards.inactive {
+	transition: transform 0.3s;
+}
+
+.cards.to-left {
+	transform: translate(-30rem) rotate(-30deg) !important;
+}
+
+.cards.to-right {
+	transform: translateX(30rem) rotate(30deg) !important;
+}
+
+.cards.below {
+	z-index: 1;
+}
+
+#name {
+	z-index: 10;
+	color: black !important;
+	position: absolute;
+	bottom: 5vh;
+	text-align: center;
+	width: 20vh;
+	margin: auto 11vh;
+	font-size: 20px !important;
+}
+
+
+
+#oval2 {
+	position: absolute;
+	width: 150vw;
+	height: calc(var(--vh, 1vh) * 25);
+	bottom: calc(var(--vh, 1vh) * -13);
+	margin: auto -25vw;
+	background: white;
+	border-radius: 150vw / calc(var(--vh, 1vh) * 25);
+	overflow: hidden;
+}
+
+.container-footer {
+	position: absolute;
+	top: calc(var(--vh, 1vh) * 90);
+	height: calc(var(--vh, 1vh) * 15);
+	width: 100vw;
+	color: black;
+}
+
+.container-infos {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	text-align: center;
+	margin: 3vh auto;
+}
+
+.container-info {
+	flex: 3;
+}
+
+
+@media only screen and (max-width: 320px) {
+	p {
+		font-size: 13px !important;
+	}
+
+	#answerLeft,
+	#answerRight {
+		font-size: 1em !important;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	p {
+		font-size: .9em !important;
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	p {
+		font-size: 1.8em !important;
+	}
+}

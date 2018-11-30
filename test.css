@@ -1,0 +1,54 @@
+* {
+	overflow: hidden;
+}
+
+.container-global {
+	width: 100vw;
+	height: calc(var(--vh, 1vh) * 100);
+	background-color: #243F4A;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white;
+}
+
+#oval {
+	width: 200vw;
+	height: calc(var(--vh, 1vh) * 50);
+	margin: -10vh -50vw 0;
+	background: white;
+	border-radius: 200vw / calc(var(--vh, 1vh) * 50);
+	overflow: hidden;
+}
+
+
+#logo {
+	height: 35vh;
+	width: 100vw;
+}
+
+
+.container-content {
+	width: 100vw;
+	height: calc(var(--vh, 1vh) * 75);
+	position: absolute;
+	margin: 13vh 0 15vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+
+@media only screen and (max-width: 320px) {
+	p {
+		font-size: 13px !important;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	p {
+		font-size: .9em !important;
+	}
+}

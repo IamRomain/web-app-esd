@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, shrink-to-fit=no" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="accueil.css">
+
+
+</head>
+
+<body>
+	<script>
+		$("body").css({
+			"overflow": "hidden",
+			'position': 'fixed'
+		});
+
+		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+		let vh = window.innerHeight * 0.01;
+		// Then we set the value in the --vh custom property to the root of the document
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+		// We listen to the resize event
+		window.addEventListener('resize', () => {
+			// We execute the same script as before
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
+		});
+	</script>
+
+
+
+
+
+
+
+
+
+
+	<div class="container-global">
+		<div class="container-bg">
+			<img src="bg.png" class="img-fluid mx-auto d-block" alt="...">
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<div class="container-modal">
+
+			<!-- Trigger the modal with a button -->
+			<button type="button" class="btn btn-default btn-lg" id="myBtn"><span class="glyphicon glyphicon-plus"></span> Nouvelle Partie</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4>Expérience de Survie Digitale</h4>
+						</div>
+						<div class="modal-body">
+
+							<div class="container-p">
+								<p>Expérience de Survie Digitale est un jeu de carte dans lequel vous incarnez un élève de l'ESD. Vos choix serons déterminant et vous permettrons de gagner plus ou moins de points. Ces points vous permettrons de gagner des places au classment.<br />
+									Il ne vous reste plus qu'a créer votre pseudo et devenir un champion !!
+								</p>
+							</div>
+
+							<form role="form" action="index.html">
+								<div class="form-group">
+									<input type="text" class="form-control" id="username" name="username" placeholder="Pseudo">
+								</div>
+								<button id="submit" type="submit" class="btn btn-success btn-block">Let's go !</button>
+							</form>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function() {
+				$("#myBtn").click(function() {
+					$("#myModal").modal({
+						backdrop: true
+					});
+				});
+			});
+		</script>
+	</div>
+</body>
+
+</html>
